@@ -1,0 +1,32 @@
+html{
+    font-family: "Poppins";
+}
+.header_img{
+    width: 80px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto 0 auto;
+    background: #482C2C;
+}
+.header_img img{
+    width: 100%;
+}
+
+.order_btn_list{
+    margin-top: 20px;
+}
+.order_btn_list>div{
+    width: 100%;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 18px;
+    padding: 15px 0;
+    margin-top: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+.unclick {
+    pointer-events: none;
+  }
+  

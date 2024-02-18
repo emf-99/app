@@ -1,0 +1,97 @@
+html{
+    font-family: "Poppins";
+}
+.order_list{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.order_list a{
+    color: black;
+}
+.order_shop_list{
+    margin-top: 10px;
+}
+.content{
+    overflow-x: hidden;
+}
+.order_shop_list>div{
+    width: 100%;
+    margin-top: 10px;
+}
+.order_shop_list img{
+    width: 100%;
+}
+.order_con{
+    width: 100%;
+    padding: 40px 20px;
+    background: #E1D3B7;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.order_con_title{
+    text-align: center;
+}
+.order_add{
+    display: flex;
+    position: relative;
+}
+.order_add>div{
+    width: 50%;
+}
+.add_icon{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #5B965E;
+    color: white;
+    border: 1px solid black;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+.order_add_right>div{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.order_img{
+    width: 50% !important;
+    position: fixed;
+    left: 25%;
+    top: 38%;
+    transform: translate(-50%,-50%);
+}
+.order_img img{
+    width: 100%;
+}
+.order_btn_line{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+
+}
+.order_btn{
+    width: 80px;
+    padding: 15px 0;
+    text-align: center;
+    border: 1px solid black;
+    font-size: 12px;
+    border-radius: 50px;
+    background: #FFF3DB;
+    font-weight: bold;
+}
+.order_line{
+    width: calc(100% - 200px);
+}
+.order_line img{
+    width: 100%;
+}
+@media screen and (max-width: 768px){
+    .order_list a{
+        color: black;
+        font-size: 18px;
+    }
+}

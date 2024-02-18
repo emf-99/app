@@ -1,0 +1,80 @@
+.content_top{
+    width: 100%;
+    padding: 20px;
+    background: #5B965E;
+    border-radius: 10px;
+    border: 2px solid #000000;
+}
+.home_title{
+    font-size: 18px;
+    font-family: "Poppins";
+}
+.home_list{
+    margin-top: 20px;
+}
+.home_list_con{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    margin-top: 5px;
+}
+.home_list_con>div{
+    background: #5B965E;
+    border: 2px solid #315133;
+    border-radius: 10px;
+    padding: 20px;
+}
+.home_list_con img{
+    width: 100%;
+}
+html{
+    font-family: "Poppins";
+}
+.StarIcon{
+    display: flex;
+    align-items: flex-end;
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.StarIcon img{
+    margin-right: 10px;
+}
+.line{
+    width: 100%;
+    height: 8px;
+    background: white;
+    border: 2px solid black;
+    margin-top: 10px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.line:before{
+    content: '';
+    background: #FF9999;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+@media screen and (max-width: 768px){
+    .home_list_con{
+        color: white;
+        font-size: 12px;
+        overflow-x: auto;
+        /*display: flex;*/
+    }
+    .home_list_con>div{
+        width: 140px;
+        text-align: center;
+    }
+    .custom{
+        margin-top: 25px;
+        display: block;
+        text-align: center;
+    }
+}

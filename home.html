@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+<header>
+    <div> </div>
+    <div>KC’s Smoothies</div>
+    <div><img src="image/home_assets/icons/cart_empty.svg" height="28" width="36"/></div>
+</header>
+<div class="content">
+    <div class="content_top">
+        <div class="home_title" style="color: white">Rewards</div>
+        <div class="StarIcon">
+            <img src="image/home_assets/icons/rewards_star_icon_full.svg" height="25" width="27"/>
+            <span>10/20</span>
+        </div>
+        <div class="line"></div>
+    </div>
+    <div class="home_list">
+        <div class="home_title">Previous Orders</div>
+        <div class="home_list_con">
+            <div>
+                <img src="image/home_assets/icons/custom_mango_icon.svg"/>
+                <span>Custom Mango</span>
+            </div>
+            <div>
+                <img src="image/home_assets/icons/custom_berry_icon.svg"/>
+                <span>Custom Berry</span>
+            </div>
+            <div id="custom">
+                <img src="image/home_assets/icons/custom_icon.svg"/>
+                <span class="custom">Custom</span>
+            </div>
+        </div>
+    </div>
+    <div class="home_list">
+        <div class="home_title">Featured</div>
+        <div class="home_list_con">
+            <div>
+                <img src="image/home_assets/icons/pb_smoothie.svg"/>
+                <span>Custom Mango</span>
+            </div>
+            <div>
+                <img src="image/home_assets/icons/taro_smoothie.svg"/>
+                <span>Custom Berry</span>
+            </div>
+            <div>
+                <img src="image/home_assets/icons/fruit_salad.svg"/>
+                <span class="custom">Custom</span>
+            </div>
+        </div>
+    </div>
+</div>
+<menu>
+    <div class="active" id="home">
+        <img src="image/home_assets/icons/home_icon_selected.svg" height="30"/>
+        <div>Home</div>
+    </div>
+    <div id="map">
+        <img src="image/home_assets/icons/map_icon_neutral.svg" height="30"/>
+        <div>Map</div>
+    </div>
+    <div id="order">
+        <img src="image/home_assets/icons/order_icon_neutral.svg" height="30"/>
+        <div>Order</div>
+    </div>
+    <div id="rewards">
+        <img src="image/home_assets/icons/rewards_icon_neutral.svg" height="30"/>
+        <div>Rewards</div>
+    </div>
+    <div id="account">
+        <img src="image/home_assets/icons/account_icon_neutral.svg" height="30"/>
+        <div>Account</div>
+    </div>
+</menu>
+
+<script>
+    
+    function navigateToPage(page) {
+        window.location.href = page + '.html';
+    }
+
+    
+    document.getElementById('home').addEventListener('click', function() {
+        navigateToPage('home');
+    });
+
+    document.getElementById('map').addEventListener('click', function() {
+        navigateToPage('map');
+    });
+
+    document.getElementById('order').addEventListener('click', function() {
+        navigateToPage('order');
+    });
+
+    document.getElementById('rewards').addEventListener('click', function() {
+        navigateToPage('rewards');
+    });
+
+    document.getElementById('account').addEventListener('click', function() {
+        navigateToPage('account');
+    });
+
+    document.getElementById('custom').addEventListener('click', function() {
+        navigateToPage('order/order1');
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+html{
+    font-family: "Poppins";
+}
+
+@font-face {
+    src: url("../font/PermanentMarker-Regular.ttf");
+    font-family: 'PermanentMarker-Regular';
+}
+@font-face {
+    src: url("../font/Piazzolla_24pt-Bold.ttf");
+    font-family: 'Piazzolla_24pt-Bold';
+}
+@font-face {
+    src: url("../font/Fredoka-VariableFont_wdth,wght.ttf");
+    font-family: 'Fredoka';
+}
+
+.order_list{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.order_list a{
+    color: black;
+}
+.order_shop_list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.order_shop_list>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: .5rem;
+    padding: .5rem;
+}
+.order_shop_list img{
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Fredoka';
+    size: 1rem;
+    color: white;
+}
+
+p {
+    font-family: "Poppins";
+    size: .5rem;
+    color: white;
+}
+
+.button-text-smoothie {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-direction: column;
+}
+
+button {
+    width: 90vw;
+    height: 20vh;
+    border: 1px solid black; 
+    border-radius: 25px; 
+    padding: .5rem;
+}
+
+.button-content>img {
+    height: 105px;
+    width: 92px;
+    padding: .25rem;
+    margin: .25rem;
+}
+
+.button-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
+
+}
+
+.pb-smoothie button {
+    background: linear-gradient(to right, #FFF2AC 10%, #5B965E 100%)
+}
+
+.taro-smoothie button {
+    background: linear-gradient(to right, #BB9BCA 10%, #5B965E 100%)
+}
+
+.fruit-salad button {
+    background: linear-gradient(to right, #018FC6 10%, #5B965E 100%)
+}
+
+.berry-smoothie button {
+    background: linear-gradient(to right, #3F54A8 10%, #5B965E 100%)
+}
+
+
+
+
+@media screen and (max-width: 768px){
+    .order_list a{
+        color: black;
+        font-size: 18px;
+    }
+}

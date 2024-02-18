@@ -1,0 +1,83 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    src: url("../font/PermanentMarker-Regular.ttf");
+    font-family: 'PermanentMarker-Regular';
+}
+@font-face {
+    src: url("../font/Piazzolla_24pt-Bold.ttf");
+    font-family: 'Piazzolla_24pt-Bold';
+}
+@font-face {
+    src: url("../font/Fredoka-VariableFont_wdth,wght.ttf");
+    font-family: 'Fredoka';
+}
+img{
+    display: block;
+}
+header{
+    background: #FF9999;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'PermanentMarker-Regular';
+    color: #F8DD80;
+    -webkit-text-stroke: 1px black; /* Safari */
+    text-stroke: 1px black;
+}
+.content{
+    width: 100%;
+    overflow-y: auto;
+    background: #FFF3DB;
+}
+menu{
+    background: #FF9999;
+    display: flex;
+    text-align: center;
+    font-family: "Poppins";
+}
+menu img{
+    margin: auto;
+}
+menu>div{
+    padding: 10px;
+    border-radius: 5px;
+}
+.active{
+    background: #482C2C;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+menu>div>div{
+    margin-top: 5px;
+}
+.sm_title{
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+
+
+@media screen and (max-width: 768px){
+    header{
+        padding: 20px;
+        font-size: 20px;
+    }
+    .content{
+        height: calc(100vh - 161px);
+        padding: 15px;
+    }
+    menu{
+        justify-content: space-between;
+        padding: 10px;
+    }
+    .title{
+        font-size: 26px;
+        font-weight: bold;
+        font-family: 'Fredoka';
+    }
+}

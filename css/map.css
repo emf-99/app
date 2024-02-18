@@ -1,0 +1,34 @@
+.map_title{
+    font-size: 26px;
+    font-weight: bold;
+    font-family: 'Fredoka';
+}
+.map_sm_title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+html{
+    font-family: "Poppins";
+}
+.content>p{
+    margin-top: 5px;
+}
+.map_contact{
+    margin-top: 20px;
+}
+.map_contact>span{
+    font-size: 20px;
+    font-weight: bold;
+}
+.map{
+    margin-top: 10px;
+    position: relative;
+}
+.map_btn{
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%,50%);
+}
