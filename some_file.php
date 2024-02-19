@@ -1,7 +1,6 @@
 <?php
-require 'dbconnect.php'; // Correctly placed here
+require 'dbconnect.php'; 
 
-// Queries for each table
 $tables = [
     'cart' => 'SELECT order_id, menu_id, quantity, status FROM cart',
     'menu' => 'SELECT id, title, img, add_ons, price, menu FROM menu',
