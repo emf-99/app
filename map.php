@@ -1,3 +1,4 @@
+<?php require 'dbconnect.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +56,7 @@
 <script>
     
     function navigateToPage(page) {
-        window.location.href = page + '.html';
+        window.location.href = page + '.php';
     }
 
     

@@ -1,3 +1,5 @@
+<?php require 'dbconnect.php'; ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,28 +26,34 @@
     </div>
     <div class="order_con">
         <div class="order_con_title">Smoothie base</div>
-        <br>
-        <br>
         <div class="order_add">
             <div></div>
             <div class="order_add_right">
                 <div>
-                    <span class="add_icon" style="background: #FF9999 !important;">-</span>
-                    Yogurt ($.60)
+                    <span class="add_icon">+</span>
+                    Water
                 </div>
                 <div>
                     <span class="add_icon">+</span>
-                    Protein ($1)
+                    Milk
+                </div>
+                <div>
+                    <span class="add_icon">+</span>
+                    Yogurt
+                </div>
+                <div>
+                    <span class="add_icon">+</span>
+                    Almond
                 </div>
             </div>
             <div class="order_img">
-                <img src="../image/order_assets/blender2.svg"/>
+                <img src="../image/order_assets/blender1.svg"/>
             </div>
         </div>
-        <div class="order_btn_line" style="margin-top: 50px">
+        <div class="order_btn_line">
             <div class="order_btn" id="backButton">< Back</div>
-            <div class="order_line"><img src="../image/order_assets/progress_bar_narrow2.svg"/></div>
-            <div class="order_btn" id="continueButton" style="background: #5B965E; color: white;">Add +</div>
+            <div class="order_line"><img src="../image/order_assets/progress_bar_narrow.svg"/></div>
+            <div class="order_btn" id="continueButton">Continue ></div>
         </div>
 
     </div>
@@ -76,15 +84,17 @@
 <script>
 
     document.getElementById('continueButton').addEventListener('click', function() {
-        window.location.href = 'cart.html';
+        window.location.href = 'order2.php';
     });
 
     document.getElementById('backButton').addEventListener('click', function() {
-        window.location.href = 'order1.html';
+        window.location.href = '../order.php';
     });
 
+  
+    
     function navigateToPage(page) {
-        window.location.href = page + '.html';
+        window.location.href = page + '.php';
     }
 
     

@@ -1,3 +1,5 @@
+<?php require 'dbconnect.php'; ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,45 +7,48 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cart</title>
+    <title>Order</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/order/cart.css">
+    <link rel="stylesheet" href="../css/order/order1.css">
 </head>
 <body>
 <header>
-    <div></div>
+    <div> </div>
     <div>KC’s Smoothies</div>
-    <div><img src="../image/home_assets/icons/cart_full.svg" height="29" width="37"/></div>
+    <div><img src="../image/home_assets/icons/cart_empty.svg" height="28" width="36"/></div>
 </header>
 <div class="content">
-    <div class="title">Cart</div>
-    <p class="sm_title">Review Order</p>
-    <div class="cart_con">
-        <div class="cart_con_left"><img src="../image/cart_assets/smoothie.svg"/></div>
-        <div class="cart_con_right">
-            <p>
-                Water base, Banana, Strawberry, Mixed Berries, Extra Yogurt
-            </p>
-            <div class="cart_btns">
-                <div>Edit</div>
-                <div>Remove</div>
+    <div class="title">Order</div>
+    <div class="order_list">
+        <a href="">Previous</a>
+        <a href="">Featured</a>
+        <a href="">Custom</a>
+    </div>
+    <div class="order_con">
+        <div class="order_con_title">Smoothie base</div>
+        <br>
+        <br>
+        <div class="order_add">
+            <div></div>
+            <div class="order_add_right">
+                <div>
+                    <span class="add_icon" style="background: #FF9999 !important;">-</span>
+                    Yogurt ($.60)
+                </div>
+                <div>
+                    <span class="add_icon">+</span>
+                    Protein ($1)
+                </div>
+            </div>
+            <div class="order_img">
+                <img src="../image/order_assets/blender2.svg"/>
             </div>
         </div>
-    </div>
-    <div class="add_con">
-        <div class="add_btn">Add +</div>
-    </div>
-    <div class="title">Summary</div>
-    <br>
-    <div>
-        Subtotal.......$5.00
-    </div>
-    <div>
-        Tax ................ $0.00
-    </div>
-    <div class="title">Total .... $5.00</div>
-    <div class="btn_con">
-        <div class="btn_l" id="continueButton">Checkout</div>
+        <div class="order_btn_line" style="margin-top: 50px">
+            <div class="order_btn" id="backButton">< Back</div>
+            <div class="order_line"><img src="../image/order_assets/progress_bar_narrow2.svg"/></div>
+            <div class="order_btn" id="continueButton" style="background: #5B965E; color: white;">Add +</div>
+        </div>
 
     </div>
 </div>
@@ -73,16 +78,15 @@
 <script>
 
     document.getElementById('continueButton').addEventListener('click', function() {
-        window.location.href = 'checkout.html';
+        window.location.href = 'cart.php';
     });
 
     document.getElementById('backButton').addEventListener('click', function() {
-        window.location.href = 'order1.html';
+        window.location.href = 'order1.php';
     });
 
-
     function navigateToPage(page) {
-        window.location.href = page + '.html';
+        window.location.href = page + '.php';
     }
 
     
@@ -105,6 +109,7 @@
     document.getElementById('account').addEventListener('click', function() {
         navigateToPage('../account');
     });
+
 
 </script>
 

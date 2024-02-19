@@ -1,3 +1,5 @@
+<?php require 'dbconnect.php'; ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,9 +7,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Checkout</title>
+    <title>Cart</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/order/checkout.css">
+    <link rel="stylesheet" href="../css/order/cart.css">
 </head>
 <body>
 <header>
@@ -17,59 +19,35 @@
 </header>
 <div class="content">
     <div class="title">Cart</div>
-    <p class="sm_title">Checkout</p>
+    <p class="sm_title">Review Order</p>
     <div class="cart_con">
-        <div class="cart_text">1 x </div>
         <div class="cart_con_left"><img src="../image/cart_assets/smoothie.svg"/></div>
         <div class="cart_con_right">
             <p>
-                Water base, Banana, Strawberry, Mixed Berries, Yogurt
+                Water base, Banana, Strawberry, Mixed Berries, Extra Yogurt
             </p>
-        </div>
-    </div>
-    <div class="sm_title">Apply Rewards?</div>
-    <div class="cart_star">
-        <div class="cart_star_left">
-            <div>
-                <img src="../image/rewards_assets/rewards_star_icon_full.svg" height="25" width="27" style="margin-right: 10px"/>
-                <span>10/20</span>
-            </div>
-            <div class="star_line"></div>
-        </div>
-        <div class="cart_star_right">
-            <div class="Apply_btn">Apply</div>
-            <div>
-                *Aquire 20 stars to redeem 1 free drink
+            <div class="cart_btns">
+                <div>Edit</div>
+                <div>Remove</div>
             </div>
         </div>
     </div>
-    <div class="price">
-        <div>
-            <p>Subtotal ...... $5.00</p>
-            <p>Tax ................ $0.00</p>
-            <p class="title">Total .... $5.00</p>
-        </div>
-        <div class="price_right">
-            <p>Payment Method</p>
-            <div class="pay_btn">
-                <button class="apple-pay">
-                    <div class="button-content">
-                        <p> Apple Pay </p>
-                        <img src="../image/cart_assets/apple_pay.svg"/>
-                    </div>
-                </button>
-            </div>
-
-
-                </button>
-            </div>
-        </div>
+    <div class="add_con">
+        <div class="add_btn">Add +</div>
+    </div>
+    <div class="title">Summary</div>
+    <br>
+    <div>
+        Subtotal.......$5.00
+    </div>
+    <div>
+        Tax ................ $0.00
+    </div>
+    <div class="title">Total .... $5.00</div>
     <div class="btn_con">
         <div class="btn_l" id="continueButton">Checkout</div>
 
     </div>
-</div>
-
 </div>
 <menu>
     <div id="home">
@@ -97,16 +75,16 @@
 <script>
 
     document.getElementById('continueButton').addEventListener('click', function() {
-        window.location.href = 'completed_order.html';
+        window.location.href = 'checkout.php';
     });
 
     document.getElementById('backButton').addEventListener('click', function() {
-        window.location.href = 'order1.html';
+        window.location.href = 'order1.php';
     });
 
 
     function navigateToPage(page) {
-        window.location.href = page + '.html';
+        window.location.href = page + '.php';
     }
 
     
@@ -129,7 +107,6 @@
     document.getElementById('account').addEventListener('click', function() {
         navigateToPage('../account');
     });
-
 
 </script>
 

@@ -1,3 +1,4 @@
+<?php require 'dbconnect.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +20,7 @@
     <div class="order_list">
         <a>Previous</a>
         <a>Featured</a>
-        <a href="order/order1.html">Custom</a>
+        <a href="order/order1.php">Custom</a>
     </div>
 
     <div class="order_shop_list">
@@ -101,7 +102,7 @@
 <script>
     
     function navigateToPage(page) {
-        window.location.href = page + '.html';
+        window.location.href = page + '.php';
     }
 
     

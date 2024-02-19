@@ -1,3 +1,5 @@
+<?php require 'dbconnect.php'; ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -70,17 +72,17 @@
 <script>
 
     document.getElementById('continueButton').addEventListener('click', function() {
-        window.location.href = '../home.html';
+        window.location.href = '../home.php';
     });
 
     document.getElementById('backButton').addEventListener('click', function() {
-        window.location.href = 'order1.html';
+        window.location.href = 'order1.php';
     });
 
    
 
     function navigateToPage(page) {
-        window.location.href = page + '.html';
+        window.location.href = page + '.php';
     }
 
     
