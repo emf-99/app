@@ -1,21 +1,4 @@
 <?php require 'dbconnect.php'; 
-try {
-    $sql = "SELECT * FROM menu"; 
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-
-    $menuItems = $stmt->fetchAll();
-} catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
-}
-
-foreach ($menuItems as $item) {
-    echo "<div class='menuItem'>";
-    echo "<h3>" . htmlspecialchars($item['title']) . "</h3>";
-    echo '<img src="image/home_assets/icons/' . $item['img'] . '" alt="smoothie image">';
-    echo "<p>Price: $" . htmlspecialchars($item['price']) . "</p>";
-    echo "</div>";
-}
 ?>
 
 <!DOCTYPE html>
@@ -47,16 +30,22 @@ foreach ($menuItems as $item) {
         <div class="home_title">Previous Orders</div>
         <div class="home_list_con">
             <div>
+            <div class="item_container">
                 <img src="image/home_assets/icons/custom_mango_icon.svg"/>
                 <span>Custom Mango</span>
             </div>
+            </div>
             <div>
+            <div class="item_container">
                 <img src="image/home_assets/icons/custom_berry_icon.svg"/>
                 <span>Custom Berry</span>
             </div>
+            </div>
             <div id="custom">
+            <div class="item_container">
                 <img src="image/home_assets/icons/custom_icon.svg"/>
                 <span class="custom">Custom</span>
+            </div>
             </div>
         </div>
     </div>
@@ -64,16 +53,22 @@ foreach ($menuItems as $item) {
         <div class="home_title">Featured</div>
         <div class="home_list_con">
             <div>
+            <div class="item_container">
                 <img src="image/home_assets/icons/pb_smoothie.svg"/>
                 <span>PB & Banana</span>
             </div>
+            </div>
             <div>
+            <div class="item_container">
                 <img src="image/home_assets/icons/taro_smoothie.svg"/>
                 <span>Exclusive Tarro</span>
             </div>
+            </div>
             <div>
+            <div class="item_container">
                 <img src="image/home_assets/icons/fruit_salad.svg"/>
                 <span class="custom">Fruit Salad</span>
+            </div>
             </div>
         </div>
     </div>

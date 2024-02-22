@@ -15,6 +15,16 @@ html{
     font-family: 'Fredoka';
 }
 
+title {
+    font-family: 'Fredoka';
+    font-size: 2rem;
+}
+
+.title {
+    font-family: 'Fredoka';
+    font-size: 2rem;
+}
+
 .order_list{
     display: flex;
     justify-content: space-between;
@@ -22,20 +32,25 @@ html{
 }
 .order_list a{
     color: black;
+    font-size: 1.5rem;
 }
 .order_shop_list{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
-    flex-direction: column;
+    /*flex-direction: column;*/
+    margin-top: 30px;
 }
 .order_shop_list>div{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: .5rem;
-    padding: .5rem;
+    /*margin: .5rem;*/
+    /*padding: .5rem;*/
+    width: 49%;
+    margin-bottom: 30px;
 }
 .order_shop_list img{
     width: 100%;
@@ -43,14 +58,15 @@ html{
 
 h1 {
     font-family: 'Fredoka';
-    size: 1rem;
+    font-size: 2rem;
     color: white;
 }
 
 p {
     font-family: "Poppins";
-    size: .5rem;
+    font-size: 1.5rem;
     color: white;
+    text-align: center;
 }
 
 .button-text-smoothie {
@@ -60,51 +76,153 @@ p {
     flex-direction: column;
 }
 
-button {
-    width: 90vw;
-    height: 20vh;
-    border: 1px solid black; 
-    border-radius: 25px; 
+.button {
+    width: 100%; 
+    min-height: 250px; 
+    max-height: 300px; 
+    border: 1px solid black;
+    border-radius: 25px;
     padding: .5rem;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 .button-content>img {
-    height: 105px;
-    width: 92px;
-    padding: .25rem;
-    margin: .25rem;
+    width: auto; 
+    height: 200px; 
+    padding: 0.25rem;
+    margin: 0.25rem;
+    object-fit: contain; 
 }
 
 .button-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; 
     align-items: center;
     flex-direction: row-reverse;
-
+    width: 100%; 
+    height: 100%; 
 }
 
-.pb-smoothie button {
+.pb_and_banana_smoothie .button {
     background: linear-gradient(to right, #FFF2AC 10%, #5B965E 100%)
 }
 
-.taro-smoothie button {
+.taro_smoothie .button {
     background: linear-gradient(to right, #BB9BCA 10%, #5B965E 100%)
 }
 
-.fruit-salad button {
+.fruit_salad .button {
     background: linear-gradient(to right, #018FC6 10%, #5B965E 100%)
 }
 
-.berry-smoothie button {
+.custom_berry_smoothie .button {
     background: linear-gradient(to right, #3F54A8 10%, #5B965E 100%)
 }
 
+.custom_mango_smoothie .button {
+    background: linear-gradient(to right, #FFD662 10%, #5B965E 100%)
+}
+
+.custom_smoothie .button {
+    background: linear-gradient(to right, #FF9999 10%, #5B965E 100%)
+}
 
 
+.xy_con{
+    max-width: 960px;
+    margin: 40px auto;
+}
+@media screen and (max-width: 960px){
+    .xy_con{
+        width: 80%;
+        margin: 40px auto;
+    }
+    .order_shop_list{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: unset;
+        margin-top: 20px;
+    }
+    .order_shop_list>div{
+        width: 49% !important;
+        margin-bottom: 20px;
+    }
+
+    .button-content>img {
+        width: auto;
+        height:150px;
+        padding: 0.25rem;
+        margin: 0.25rem;
+        object-fit: contain;
+    }
+
+    .button-text-smoothie {
+        margin-bottom: 2rem;
+    }
+    
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        text-align: center;
+    }
+}
 
 @media screen and (max-width: 768px){
     .order_list a{
         color: black;
         font-size: 18px;
     }
+    .xy_con{
+        width: 100%;
+    }
+    .order_shop_list{
+        flex-direction: column;
+    }
+    .order_shop_list>div{
+        width: 100% !important;
+    }
+
+    .button {
+        width: 70%;
+        height: auto;
+    }
+
+    .button-content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column-reverse;
+        padding: 1rem;
+    }
+
+    .button-content>img {
+        min-width: 150px;
+        height: auto;
+        padding: 0.25rem;
+        margin: 0.25rem;
+        object-fit: contain; 
+    }
+
+    .button-text-smoothie {
+        margin-bottom: 2rem;
+    }
+    
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
 }

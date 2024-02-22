@@ -25,7 +25,7 @@
         <a href="">Custom</a>
     </div>
     <div class="order_con">
-        <div class="order_con_title">Smoothie base</div>
+        <div class="order_con_title">Add Ons</div>
         <br>
         <br>
         <div class="order_add">

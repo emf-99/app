@@ -1,45 +1,67 @@
-html{
+html {
     font-family: "Poppins";
 }
-.order_list{
+
+title {
+    font-family: 'Fredoka';
+    font-size: 2rem;
+}
+
+.title {
+    font-family: 'Fredoka';
+    font-size: 2rem;
+}
+
+.order_list {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
 }
-.order_list a{
+
+.order_list a {
     color: black;
 }
-.order_shop_list{
+
+.order_shop_list {
     margin-top: 10px;
 }
-.content{
+
+.content {
     overflow-x: hidden;
 }
-.order_shop_list>div{
+
+.order_shop_list > div {
     width: 100%;
     margin-top: 10px;
 }
-.order_shop_list img{
+
+.order_shop_list img {
     width: 100%;
 }
-.order_con{
+
+.order_con {
     width: 100%;
     padding: 40px 20px;
     background: #E1D3B7;
     margin-top: 20px;
     border-radius: 10px;
 }
-.order_con_title{
+
+.order_con_title {
     text-align: center;
 }
-.order_add{
+
+.order_add {
     display: flex;
     position: relative;
+
 }
-.order_add>div{
+
+.order_add > div {
     width: 50%;
 }
-.add_icon{
+
+.add_icon {
     width: 30px;
     height: 30px;
     display: flex;
@@ -51,29 +73,34 @@ html{
     border-radius: 100%;
     margin-right: 10px;
 }
-.order_add_right>div{
+
+.order_add_right > div {
     display: flex;
     align-items: center;
     margin-top: 10px;
 }
-.order_img{
-    width: 50% !important;
+
+.order_img {
+    width: 10% !important;
     position: fixed;
-    left: 25%;
-    top: 26%;
-    transform: translate(-50%,-50%);
+    left: 40%;
+    top: 38%;
+    transform: translate(-50%, -50%);
 }
-.order_img img{
+
+.order_img img {
     width: 100%;
 }
-.order_btn_line{
+
+.order_btn_line {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-
+    cursor: pointer;
 }
-.order_btn{
+
+.order_btn {
     width: 80px;
     padding: 15px 0;
     text-align: center;
@@ -83,15 +110,51 @@ html{
     background: #FFF3DB;
     font-weight: bold;
 }
-.order_line{
+
+.order_line {
     width: calc(100% - 200px);
 }
-.order_line img{
+
+.order_line img {
     width: 100%;
 }
-@media screen and (max-width: 768px){
-    .order_list a{
+
+.xy_con {
+    max-width: 960px;
+    margin: 40px auto;
+}
+button{
+    cursor: pointer;
+}
+#continueButton{
+    cursor: pointer;
+}
+@media screen and (max-width: 960px) {
+    .xy_con {
+        width: 80%;
+    }
+    .order_img{
+        width: 20%;
+        position: fixed;
+        left: 28%;
+        top: 31%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .xy_con{
+        width: 100%;
+    }
+    .order_list a {
         color: black;
         font-size: 18px;
+    }
+    .order_img{
+        width: 60% !important;
+        position: fixed;
+        left: 15%;
+        top: 42%;
+        transform: translate(-50%, -50%);
     }
 }

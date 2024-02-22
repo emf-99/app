@@ -1,4 +1,5 @@
-<?php require 'dbconnect.php'; ?>
+<?php require 'dbconnect.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,57 +24,63 @@
         <a href="order/order1.php">Custom</a>
     </div>
 
-    <div class="order_shop_list">
+<?php
 
-        <div class="pb-smoothie">
-            <button class="pb-smoothie button">
-                <div class="button-content">
-                <div class="button-text-smoothie">
-                <h1> PB & Bananna</h1>
-                <p> Water base, Peanut butter, Banana</p>
-                </div>
-                <img src="image/order_assets/pb_smoothie.svg">
-                </div>
-            </button>
-        </div>
+function determineClassBasedOnTitle($title) {
+    $normalizedTitle = strtolower($title);
+    
+    if (strpos($normalizedTitle, 'pb and banana') !== false) {
+        return 'pb_and_banana_smoothie';
+    } elseif (strpos($normalizedTitle, 'exclusive tarro') !== false) {
+        return 'taro_smoothie';
+    } elseif (strpos($normalizedTitle, 'fruit salad') !== false) {
+        return 'fruit_salad';
+    } elseif (strpos($normalizedTitle, 'custom berry') !== false) {
+        return 'custom_berry_smoothie';
+    } elseif (strpos($normalizedTitle, 'custom mango') !== false) {
+        return 'custom_mango_smoothie';
+    } elseif (strpos($normalizedTitle, 'custom') !== false) {
+        return 'custom_smoothie';
+    } else {
+        return 'default_smoothie'; 
+    }
+}
 
-        <div class="taro-smoothie">
-            <button class="taro-smoothie button">
-                <div class="button-content">
-                <div class="button-text-smoothie">
-                <h1> Exclusive Taro </h1>
-                <p> Milk base, Taro, Honey</p>
-                </div>
-                <img src="image/order_assets/taro_smoothie.svg">
-                </div>
-            </button>
-        </div>
+try {
 
-        <div class="fruit-salad">
-            <button class="fruit-salad button">
-                <div class="button-content">
-                <div class="button-text-smoothie">
-                <h1> Fruit Salad </h1>
-                <p> Bananas, Mixed Berries, Pineapple, Strawberries, Mango</p>
-                </div>
-                <img src="image/order_assets/fruit_salad.svg">
-                </div>
-            </button>
-        </div>
+    $sql = "SELECT * FROM menu"; 
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
 
-        <div class="berry-smoothie">
-            <button class="berry-smoothie button">
-                <div class="button-content">
-                <div class="button-text-smoothie">
-                <h1> Mixed Berry </h1>
-                <p> Water base, Mixed Berries, Pineapple, Strawberries, Mango</p>
-                </div>
-                <img src="image/order_assets/mixed_berry.svg">
-                </div>
-            </button>
-        </div>
+    $menuItems = $stmt->fetchAll();
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
 
-    </div>
+echo "<div class='order_shop_list'>";
+
+foreach ($menuItems as $item) {
+
+    $css_class = determineClassBasedOnTitle($item['title']);
+
+    echo "<div class='" . htmlspecialchars($css_class) . "'>";
+        echo "<a href='order/detail.php?id=" . $item['id'] . "' class='button'>"; 
+            echo "<div class='button-content'>";
+                echo "<div class='button-text-smoothie'>";
+                    echo "<h1>" . htmlspecialchars($item['title']) . "</h1>";
+                    echo "<p>" . htmlspecialchars($item['description']) . "</p>";
+                    echo "<p> $" . htmlspecialchars($item['price']) . "</p>"; 
+                echo "</div>";
+                echo '<img src="image/home_assets/icons/' . htmlspecialchars($item['img']) . '" alt="' . htmlspecialchars($item['title']) . ' image">';
+            echo "</div>";
+        echo "</a>";
+    echo "</div>";
+
+}
+
+echo "</div>";
+
+?>
 
 </div>
 <menu>

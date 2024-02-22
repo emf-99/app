@@ -3,6 +3,17 @@
     font-weight: bold;
     font-family: 'Fredoka';
 }
+
+title {
+    font-family: 'Fredoka';
+    font-size: 2rem;
+}
+
+.title {
+    font-family: 'Fredoka';
+    font-size: 2rem;
+}
+
 .map_sm_title{
     font-size: 20px;
     font-weight: bold;
@@ -31,4 +42,14 @@ html{
     left: 50%;
     bottom: 0;
     transform: translate(-50%,50%);
+}
+.xy_con{
+    max-width: 960px;
+    margin: 40px auto;
+}
+@media screen and (max-width: 960px){
+    .xy_con{
+        width: 80%;
+        margin: 40px auto;
+    }
 }

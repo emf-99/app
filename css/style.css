@@ -26,6 +26,8 @@ header{
     color: #F8DD80;
     -webkit-text-stroke: 1px black; /* Safari */
     text-stroke: 1px black;
+    padding: 20px;
+    font-size: 26px;
 }
 .content{
     width: 100%;
@@ -59,6 +61,21 @@ menu>div>div{
     font-size: 18px;
     margin-top: 20px;
 }
+.content{
+    height: calc(100vh - 78px);
+    padding: 15px 15px 100px 15px;
+}
+menu{
+    justify-content: space-between;
+    padding: 10px;
+    width: 960px;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
 
 
 
@@ -68,16 +85,36 @@ menu>div>div{
         font-size: 20px;
     }
     .content{
-        height: calc(100vh - 161px);
+        height: calc(100vh - 190px);
         padding: 15px;
     }
     menu{
+        position: relative !important;
         justify-content: space-between;
         padding: 10px;
+        width: 100% !important;
+        border-radius: 0 !important;
     }
     .title{
         font-size: 26px;
         font-weight: bold;
         font-family: 'Fredoka';
+    }
+}
+@media screen and (max-width: 960px){
+    header{
+        padding: 30px;
+        font-size: 26px;
+    }
+    menu{
+        position: relative !important;
+        justify-content: space-between;
+        padding: 10px;
+        width: 100% !important;
+        border-radius: 0 !important;
+    }
+    .content{
+        height: calc(100vh - 190px);
+        padding: 15px;
     }
 }
