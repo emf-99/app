@@ -17,47 +17,59 @@
     <div>KC’s Smoothies</div>
     <div><img src="../image/home_assets/icons/cart_empty.svg" height="28" width="36"/></div>
 </header>
-<div class="content">
-    <div class="title">Order</div>
-    <div class="order_list">
-        <a href="">Previous</a>
-        <a href="">Featured</a>
-        <a href="">Custom</a>
-    </div>
-    <div class="order_con">
-        <div class="order_con_title">Smoothie base</div>
-        <div class="order_add">
-            <div></div>
-            <div class="order_add_right">
-                <div>
-                    <span class="add_icon">+</span>
-                    Water
-                </div>
-                <div>
-                    <span class="add_icon">+</span>
-                    Milk
-                </div>
-                <div>
-                    <span class="add_icon">+</span>
-                    Yogurt
-                </div>
-                <div>
-                    <span class="add_icon">+</span>
-                    Almond
-                </div>
-            </div>
-            <div class="order_img">
-                <img src="../image/order_assets/blender1.svg"/>
-            </div>
-        </div>
-        <div class="order_btn_line">
-            <div class="order_btn" id="backButton">< Back</div>
-            <div class="order_line"><img src="../image/order_assets/progress_bar_narrow.svg"/></div>
-            <div class="order_btn" id="continueButton">Continue ></div>
-        </div>
 
+<div class="content">
+    <div class="xy_con">
+        <div class="title">Order</div>
+        <div class="order_list">
+            <a href="">Previous</a>
+            <a href="">Featured</a>
+            <a href="">Custom</a>
+        </div>
     </div>
-</div>
+
+    <div class="center_content">
+    <div class="order_con"> 
+
+        <div class="order_con_title">Smoothie base</div>
+
+            <div class="order_add">
+                <div class="order_add_right">
+                    <div>
+                        <span class="add_icon">+</span>
+                        Water
+                    </div>
+                    <div>
+                        <span class="add_icon">+</span>
+                        Milk
+                    </div>
+                    <div>
+                        <span class="add_icon">+</span>
+                        Yogurt
+                    </div>
+                    <div>
+                        <span class="add_icon">+</span>
+                        Almond
+                    </div>
+                </div>
+
+
+                <div class="order_img">
+                    <img src="../image/order_assets/blender1.svg"/>
+                </div> 
+            </div>
+
+
+            <div class="order_btn_line">
+                <div class="order_btn" id="backButton">< Back</div>
+                <div class="order_line"><img src="../image/order_assets/progress_bar_narrow.svg"/></div>
+                <div class="order_btn" id="continueButton">Continue ></div>
+            </div>
+
+        </div>
+    </div>
+</div> 
+
 <menu>
     <div id="home">
         <img src="../image/home_assets/icons/home_icon_neutral.svg" height="30"/>

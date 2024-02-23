@@ -12,6 +12,11 @@ title {
     font-size: 2rem;
 }
 
+.order_list a{
+    color: black;
+    font-size: 1.5rem;
+}
+
 .completed{
     width: 100%;
     padding: 20px;

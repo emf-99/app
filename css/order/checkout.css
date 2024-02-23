@@ -12,6 +12,11 @@ title {
     font-size: 2rem;
 }
 
+.order_list a{
+    color: black;
+    font-size: 1.5rem;
+}
+
 .cart_con{
     padding: 20px;
     margin-top: 20px;
