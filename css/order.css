@@ -35,22 +35,14 @@ title {
     font-size: 1.5rem;
 }
 .order_shop_list{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; 
     /*flex-direction: column;*/
-    margin-top: 30px;
+    margin-top: 20px;
 }
-.order_shop_list>div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /*margin: .5rem;*/
-    /*padding: .5rem;*/
-    width: 49%;
-    margin-bottom: 30px;
+.order_shop_list>form{
+    margin: 10px;
 }
 .order_shop_list img{
     width: 100%;
@@ -140,16 +132,14 @@ p {
         margin: 40px auto;
     }
     .order_shop_list{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        flex-direction: unset;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr; 
+        /*flex-direction: column;*/
         margin-top: 20px;
     }
-    .order_shop_list>div{
-        width: 49% !important;
-        margin-bottom: 20px;
+    .order_shop_list>form{
+        margin: 10px;
     }
 
     .button-content>img {
@@ -184,10 +174,14 @@ p {
         width: 100%;
     }
     .order_shop_list{
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
     }
-    .order_shop_list>div{
+    .order_shop_list>form{
         width: 100% !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .button {

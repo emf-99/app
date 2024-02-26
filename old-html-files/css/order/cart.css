@@ -1,0 +1,98 @@
+html{
+    font-family: "Poppins";
+}
+.cart_con{
+    padding: 20px;
+    margin-top: 20px;
+    background: #E1D3B7;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 20px;
+}
+.cart_con_left{
+    width: 40%;
+}
+.cart_con_right{
+    width: 60%;
+}
+.cart_con_left>img{
+    width: 100%;
+}
+.cart_con_right p{
+    line-height: 150%;
+}
+.cart_btns{
+    display: flex;
+    justify-content: space-between;
+}
+.cart_btns>div{
+    display: inline-block;
+    background: #FFF3DB;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid black;
+    margin-top: 15px;
+    font-weight: bold;
+}
+.add_con{
+    text-align: right;
+    margin-top: 15px;
+}
+.add_btn{
+    display: inline-block;
+    background: #FFF3DB;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+.btn_con{
+    text-align: center;
+    margin-top: 20px;
+}
+.btn_l{
+    display: inline-block;
+    padding: 10px 50px;
+    background: #5B965E;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    border: 2px solid black;
+
+}
+.xy_con{
+    max-width: 960px;
+    margin: auto;
+}
+.cart_con_left{
+    width: 15%;
+}
+#continueButton{
+    cursor: pointer;
+}
+@media screen and (max-width: 960px){
+    .xy_con{
+        width: 80%;
+    }
+    .btn_l{
+        padding: 10px 30px;
+    }
+    .cart_con_left{
+        width: 20% !important;
+    }
+    .content{
+        /*height: calc(100vh - 100px) !important;*/
+    }
+}
+@media screen and (max-width: 768px){
+    .xy_con{
+        width: 100%;
+    }
+    .btn_l{
+        padding: 10px 20px;
+    }
+    .cart_con_left{
+        width: 40% !important;
+    }
+}

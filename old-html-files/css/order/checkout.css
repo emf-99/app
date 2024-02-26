@@ -1,0 +1,217 @@
+html{
+    font-family: "Poppins";
+}
+.cart_con{
+    padding: 20px;
+    margin-top: 20px;
+    background: #E1D3B7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+}
+.cart_text{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn_con{
+    text-align: center;
+    margin-top: 20px;
+}
+.btn_l{
+    display: inline-block;
+    padding: 10px 40px;
+    background: #5B965E;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    border: 2px solid black;
+}
+.cart_star{
+    padding: 20px;
+    margin-top: 20px;
+    background: #E1D3B7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+}
+.cart_star>div{
+    width: 48%;
+}
+.cart_star_left>div{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.apple-pay {
+    display: inline-block;
+    background: #FFF3DB;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid black;
+    font-weight: bold;
+    background: #FFF3DB;
+    margin-bottom: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.button-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.button-content>img {
+    height: 30px;
+    width: 45px;
+    padding: .25rem;
+}
+
+
+.star_line{
+    width: 100%;
+    height: 8px;
+    background: white;
+    border: 2px solid black;
+    margin-top: 10px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.star_line:before{
+    content: '';
+    background: #FF9999;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.Apply_btn{
+    display: inline-block;
+    background: #FFF3DB;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid black;
+    font-weight: bold;
+    background: #FFF3DB;
+
+    margin-bottom: 10px;
+}
+.cart_star_right{
+    text-align: center;
+}
+.price{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.price>div{
+    width: 49%;
+}
+.img_btn{
+    width: 100%;
+    margin-top: 5px;
+}
+.img_btn img{
+    width: 100%;
+}
+.price_right{
+    text-align: center;
+}
+.xy_con{
+    max-width: 960px;
+    margin: 40px auto;
+}
+#continueButton{
+    cursor: pointer;
+}
+.mark{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    background: rgba(0,0,0,0.3);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.mark_con{
+    width: 960px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 40px 0;
+    background: #E1D3B7;
+
+}
+.mark_title{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+.mark_img{
+    width: 380px;
+    margin: 10px auto;
+}
+.mark_img img{
+    width: 100%;
+}
+.mark_btn{
+    display: flex;
+    justify-content: space-between;
+    width: 380px;
+    margin: auto;
+}
+.mark_btn>div{
+    width: 49%;
+    padding: 15px 0;
+    text-align: center;
+    border: 1px solid black;
+    background: #FFF3DB;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+}
+@media screen and (max-width: 960px){
+    .xy_con{
+        width: 80%;
+    }
+    .btn_l{
+        padding: 10px 30px;
+    }
+    .cart_con_left{
+        width: 20% !important;
+    }
+    .content{
+        /*height: calc(100vh - 100px) !important;*/
+    }
+    .mark_con{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 768px){
+    .xy_con{
+        width: 100%;
+    }
+    .btn_l{
+        padding: 10px 20px;
+    }
+    .cart_con_left{
+        width: 40% !important;
+    }
+    .mark_con{
+        width: 95%;
+    }
+}

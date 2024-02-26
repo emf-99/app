@@ -73,24 +73,19 @@
 
 <menu>
     <div id="home">
-        <img src="../image/home_assets/icons/home_icon_neutral.svg" height="30"/>
-        <div>Home</div>
+        <img src="../image/home_assets/icons/home_icon_neutral.svg" height="25"/>
     </div>
     <div id="map">
         <img src="../image/home_assets/icons/map_icon_neutral.svg" height="30"/>
-        <div>Map</div>
     </div>
     <div class="active" id="order">
-        <img src="../image/home_assets/icons/order_icon_selected.svg" height="30"/>
-        <div>Order</div>
+        <img src="../image/home_assets/icons/order_icon_selected.svg" height="40"/>
     </div>
     <div id="rewards">
         <img src="../image/home_assets/icons/rewards_icon_neutral.svg" height="30"/>
-        <div>Rewards</div>
     </div>
     <div id="account">
-        <img src="../image/home_assets/icons/account_icon_neutral.svg" height="30"/>
-        <div>Account</div>
+        <img src="../image/home_assets/icons/account_icon_neutral.svg" height="25"/>
     </div>
 </menu>
 

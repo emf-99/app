@@ -1,0 +1,32 @@
+# This YAML file is a GitHub Actions workflow for deploying the main branch to production.
+# It is triggered on every push to the 'main' branch.
+
+name: Deploy Main Branch to Production 🚀
+
+on:
+  push:
+    branches: [main]  # Specifies that this workflow is triggered on push events to the 'main' branch.
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy  # A descriptive name for the job.
+    runs-on: ubuntu-latest  # Specifies the type of virtual host machine to run the job on.
+
+    steps:  # A sequence of tasks that will be executed as part of the job.
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2  # Uses the 'checkout' action to fetch the repository code.
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3  # Uses a third-party action to deploy files via FTP.
+      with:
+        server: ${{ secrets.FTP_SERVER }}  # The FTP server address, stored as a GitHub secret.
+        username:  ${{ secrets.FTP_USERNAME }}  # The FTP username, stored as a GitHub secret.
+        password: ${{ secrets.FTP_PASSWORD }}  # The FTP password, stored as a GitHub secret.
+        local-dir: './'  # Specifies the local directory to upload. Here, it's set to the project root.
+        port: 22
+        dry-run: true  # Enables a dry run for testing purposes. Uncomment for actual deployment.
+
+# Instructions:
+# - To activate deployment, remove or comment out the 'dry-run' line.
+# - Ensure that FTP_SERVER, FTP_USERNAME, and FTP_PASSWORD secrets are configured in your repository settings.
+# - This workflow provides a basic template for deploying web projects via FTP. Customize as needed for your project.

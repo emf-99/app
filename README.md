@@ -29,26 +29,22 @@ Assistant Project Manager: Gavin Cochrane, Thomas Wang
 
 
 
-### Useful Links: 
+# RUN APP LOCALLY:
 
-Team Page (Wiki): https://idm216-kc-smoothies-website.vercel.app/
+## 1. Download MAMP
+## 2. Download database (folder called "database" > idm216.sql)
+## 3. How to Install App and Database Locally
+   1. open MAMP
+   2. click "Start"
+   3. Click "WebStart"
 
-GitHub Repo: https://github.com/emf-99/idm216-KCSmoothies-website
-
-
-
-
-### Planner Details: Include a list of Kanban-style buckets and tasks with due dates.
-
-To-do: Tasks that need to be stated/completed
-
-In-Progress: Tasks that have been started and need to be completed
-
-Done: Tasks that have been completed
-
-
-
-
-### Link to Microsoft Teams group:
-
-https://teams.microsoft.com/l/team/19%3aWIgmgxvE7DJ1v6fISrgH2Cq5jbons08uMlnTKFPpCyc1%40thread.tacv2/conversations?groupId=9ca30acd-5661-47ae-831c-5be70e06c93e&tenantId=3664e6fa-47bd-45a6-9670-8c4f080f8ca6
+   4. On the MAMP landing page, click "Tools"
+   5. click "phpMyAdmin"
+   6. When in "phpMyAdmin", click "New" on the left sidebar
+   7. under "Create Database", name the database "idm216", and click "Continue"
+   8. Click "Import" from top navigation bar
+   9. Click "Choose File" and select "idm216.sql" from wherever you saved it to your computer
+   10. Scroll to the bottom of the page and select "Import"
+## 4. Make sure MAMP is pointed to folder "idm216-KCSmoothies-app" (Preferences>Server>Document Root)
+## 5. To navigate to the home page, your address bar should read "http://localhost:8888/home.php"
+   

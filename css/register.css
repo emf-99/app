@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background: #FFF3DB; */
+
+}
+
+@font-face {
+    src: url("../font/PermanentMarker-Regular.ttf");
+    font-family: 'PermanentMarker-Regular';
+}
+@font-face {
+    src: url("../font/Piazzolla_24pt-Bold.ttf");
+    font-family: 'Piazzolla_24pt-Bold';
+}
+@font-face {
+    src: url("../font/Fredoka-VariableFont_wdth,wght.ttf");
+    font-family: 'Fredoka';
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #FFF3DB;
+    margin: 0;
+    padding: 2rem;
+}
+
+.register_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #E1D3B7;
+    padding: 2rem 8rem;
+    border-radius: 20px;
+}
+
+h2 {
+    font-family: 'Fredoka';
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form, p {
+    font-family: 'poppins';
+    font-size: 18px;
+}
+
+label {
+    font-family: 'poppins';
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+input, button {
+    font-family: 'poppins';
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 16px; /* Font size */
+    padding: 5px 10px; /* Padding around the text inside the input */
+    border: 1px solid black; /* Border color and width */
+    border-radius: 30px; /* Border radius to round the corners */
+    background-color: #FFF3DB;
+}
+
+.signin_btn {
+    background-color: #5B965E;
+    color: white;
+    padding: 10px 10px;
+}
+
+.signin_btn a{
+    color: white;
+}
+
+input#password {
+    margin-bottom: 10px;
+}
+
+input:focus {
+    outline: none; /* Remove the default focus outline */
+    border-color: #FF9999; /* Change the border color when focused */
+    box-shadow: 0 0 5px rgba(252, 179, 179, 0.5); /* Add a box shadow when focused */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+@media screen and (max-width: 550px){
+    .register_content {
+        padding: 1rem 3rem;
+    }
+}

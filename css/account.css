@@ -39,6 +39,10 @@ title {
     border-radius: 50px;
 }
 
+div#logout>a {
+    color: black;
+}
+
 .unclick {
     pointer-events: none;
 }

@@ -23,7 +23,7 @@ title {
     background: #E1D3B7;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     border-radius: 20px;
 }
 .cart_con_left{
@@ -55,13 +55,14 @@ title {
     text-align: right;
     margin-top: 15px;
 }
-.add_btn{
+a.add_btn{
     display: inline-block;
     background: #FFF3DB;
     padding: 10px 20px;
     border-radius: 50px;
     border: 1px solid black;
     font-weight: bold;
+    color: black;
 }
 .btn_con{
     text-align: center;
@@ -75,7 +76,20 @@ title {
     font-weight: bold;
     border-radius: 50px;
     border: 2px solid black;
+    margin: 1rem 0rem;
 
+}
+
+.remove_button {
+    font-family: "Poppins";
+    display: inline-block;
+    background: #FFF3DB;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid black;
+    font-weight: bold;
+    color: black;
+    margin: 1rem 0rem;
 }
 .xy_con{
     max-width: 960px;

@@ -29,29 +29,24 @@
         <div id="settings" class="unclick">Settings</div>
         <div id="legal" class="unclick">Legal</div>
         <div id="more" class="unclick">More</div>
-        <div id="logout" class="unclick">Log Out</div>
+        <div id="logout"> <a href="register.php">Log Out</a> </div>
     </div>
 </div>
 <menu>
     <div id="home">
-        <img src="image/home_assets/icons/home_icon_neutral.svg" height="30"/>
-        <div>Home</div>
+        <img src="image/home_assets/icons/home_icon_neutral.svg" height="25"/>
     </div>
     <div id="map">
         <img src="image/home_assets/icons/map_icon_neutral.svg" height="30"/>
-        <div>Map</div>
     </div>
     <div id="order">
-        <img src="image/home_assets/icons/order_icon_neutral.svg" height="30"/>
-        <div>Order</div>
+        <img src="image/home_assets/icons/order_icon_neutral.svg" height="35"/>
     </div>
     <div id="rewards">
         <img src="image/home_assets/icons/rewards_icon_neutral.svg" height="30"/>
-        <div>Rewards</div>
     </div>
     <div class="active" id="account">
         <img src="image/home_assets/icons/account_icon_selected.svg" height="30"/>
-        <div>Account</div>
     </div>
 </menu>
 
@@ -60,7 +55,6 @@
     function navigateToPage(page) {
         window.location.href = page + '.php';
     }
-
 
     document.getElementById('privacy').addEventListener('click', function() {
         navigateToPage('privacy');

@@ -1,5 +1,11 @@
-<?php require 'dbconnect.php'; 
+<?php 
+
+session_start(); // Start the session at the beginning
+require 'dbconnect.php';
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +20,7 @@
 <header>
     <div> </div>
     <div>KC’s Smoothies</div>
-    <div><img src="image/home_assets/icons/cart_empty.svg" height="28" width="36"/></div>
+    <div><img id="cartBtn" src="image/home_assets/icons/cart_empty.svg" height="28" width="36"/></div>
 </header>
 <div class="content">
     <div class="title">Order</div>
@@ -57,14 +63,20 @@ try {
     echo "Error: " . $e->getMessage();
 }
 
+// dummy data for order
+$order=[
+"id"=>9,
+"cart_id"=>1,
+"user_id"=>3,
+];
+
 echo "<div class='order_shop_list'>";
 
 foreach ($menuItems as $item) {
 
     $css_class = determineClassBasedOnTitle($item['title']);
-
-    echo "<div class='" . htmlspecialchars($css_class) . "'>";
-        echo "<a href='order/detail.php?id=" . $item['id'] . "' class='button'>"; 
+    echo "<form method='post' action='controller/add_to_cart.php' class='" . htmlspecialchars($css_class) . "'>";
+        echo "<button class='button'>"; 
             echo "<div class='button-content'>";
                 echo "<div class='button-text-smoothie'>";
                     echo "<h1>" . htmlspecialchars($item['title']) . "</h1>";
@@ -73,8 +85,10 @@ foreach ($menuItems as $item) {
                 echo "</div>";
                 echo '<img src="image/home_assets/icons/' . htmlspecialchars($item['img']) . '" alt="' . htmlspecialchars($item['title']) . ' image">';
             echo "</div>";
-        echo "</a>";
-    echo "</div>";
+            echo "<input type='hidden' name='order_id' value='" . htmlspecialchars($order['id']) . "'>";
+            echo "<input type='hidden' name='menu_id' value='" . htmlspecialchars($item['id']) . "'>";
+        echo "</button>";
+    echo "</form>";
 
 }
 
@@ -83,30 +97,30 @@ echo "</div>";
 ?>
 
 </div>
+
 <menu>
     <div id="home">
-        <img src="image/home_assets/icons/home_icon_neutral.svg" height="30"/>
-        <div>Home</div>
+        <img src="../image/home_assets/icons/home_icon_neutral.svg" height="25"/>
     </div>
     <div id="map">
-        <img src="image/home_assets/icons/map_icon_neutral.svg" height="30"/>
-        <div>Map</div>
+        <img src="../image/home_assets/icons/map_icon_neutral.svg" height="30"/>
     </div>
     <div class="active" id="order">
-        <img src="image/home_assets/icons/order_icon_selected.svg" height="30"/>
-        <div>Order</div>
+        <img src="../image/home_assets/icons/order_icon_selected.svg" height="40"/>
     </div>
     <div id="rewards">
-        <img src="image/home_assets/icons/rewards_icon_neutral.svg" height="30"/>
-        <div>Rewards</div>
+        <img src="../image/home_assets/icons/rewards_icon_neutral.svg" height="30"/>
     </div>
     <div id="account">
-        <img src="image/home_assets/icons/account_icon_neutral.svg" height="30"/>
-        <div>Account</div>
+        <img src="../image/home_assets/icons/account_icon_neutral.svg" height="25"/>
     </div>
 </menu>
 
 <script>
+
+    document.getElementById('cartBtn').addEventListener('click', function() {
+        window.location.href = 'order/cart.php';
+    });
     
     function navigateToPage(page) {
         window.location.href = page + '.php';
