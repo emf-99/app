@@ -12,9 +12,16 @@ title {
     font-size: 2rem;
 }
 
+.order1_title{
+    font-size: 1.75rem;
+    font-weight: bold;
+    font-family: 'Fredoka';
+}
+
 .order_list a{
     color: black;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    font-family: 'Mobile-Standard';
 }
 
 .order_list {
@@ -59,6 +66,8 @@ title {
 
 .order_con_title {
     text-align: center;
+    font-size: 1rem;
+    font-family: 'Button-Text';
 }
 
 .order_add {
@@ -78,6 +87,7 @@ title {
     align-items: flex-start;
     margin-top: 10px;
     flex-direction: column;
+    font-family: "Mobile-Standard";
 }
 
 .add_icon {
@@ -123,10 +133,11 @@ title {
     padding: 15px 0;
     text-align: center;
     border: 1px solid black;
-    font-size: 12px;
+    font-size: 1rem;
     border-radius: 50px;
     background: #FFF3DB;
     font-weight: bold;
+    font-family: "Button-Text";
 }
 
 .order_line {
@@ -148,6 +159,38 @@ button{
 #continueButton{
     cursor: pointer;
 }
+
+
+
+.custom_radio {
+    display: none;
+}
+
+.custom_radio + label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.custom_radio + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.custom_radio:checked + label:before {
+    background-color: #FF9999;
+    border: 2px solid black;
+}
+
+  
 @media screen and (max-width: 960px) {
     .xy_con {
         width: 80%;

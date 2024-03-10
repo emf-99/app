@@ -2,32 +2,36 @@
 session_start();
 require '../dbconnect.php';
 
+if (basename($_SERVER['PHP_SELF']) !== 'register.php') {
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: register.php');
+        exit();
+    }
+}
+
 $totalPrice = 0;
 $taxRate = 0.08;
 $items = [];
 
-
 if (isset($_SESSION['user_id'])) {
     $userId = $_SESSION['user_id'];
-    
 
     $orderStmt = $conn->prepare("SELECT id FROM orders WHERE user_id = ? AND status = 'pending'");
     $orderStmt->execute([$userId]);
     $order = $orderStmt->fetch();
-    
+
     if ($order) {
         $orderId = $order['id'];
-        
 
-        $cartStmt = $conn->prepare("SELECT menu.*, cart.quantity FROM cart JOIN menu ON cart.menu_id = menu.id WHERE cart.order_id = ?");
+        $cartStmt = $conn->prepare("SELECT menu.*, cart.quantity, cart.custom_description FROM cart JOIN menu ON cart.menu_id = menu.id WHERE cart.order_id = ?");
         $cartStmt->execute([$orderId]);
         $items = $cartStmt->fetchAll();
-        
+
         foreach ($items as $item) {
             $itemTotal = $item['price'] * $item['quantity'];
             $totalPrice += $itemTotal;
         }
-        
+
         $tax = $totalPrice * $taxRate;
         $grandTotal = $totalPrice + $tax;
     }
@@ -35,6 +39,8 @@ if (isset($_SESSION['user_id'])) {
 
 if (empty($items)) {
     echo "<p>Your cart is empty.</p>";
+} else {
+
 }
 ?>
 
@@ -69,6 +75,9 @@ if (empty($items)) {
             <div class="cart_con_right">
                 <h1><?php echo htmlspecialchars($item['title']); ?></h1>
                 <p><?php echo htmlspecialchars($item['description']); ?></p>
+                <?php if (!empty($item['custom_description'])): ?>
+                        <p>Customization: <?php echo htmlspecialchars($item['custom_description']); ?></p>
+                <?php endif; ?>
             </div>
         </div>
     <?php endforeach; ?>
@@ -113,7 +122,7 @@ if (empty($items)) {
         </div>
     <div class="btn_con">
         <form action="../controller/complete_order.php" method="post">
-            <button type="submit" class="btn_l">Checkout</button>
+            <button type="submit" class="btn_l" id="checkoutButton">Checkout</button>
         </form>
     </div>
 </div>
@@ -122,31 +131,31 @@ if (empty($items)) {
 
 <menu>
     <div id="home">
-        <img src="../image/home_assets/icons/home_icon_neutral.svg" height="25"/>
+        <img src="../image/home_assets/icons/home_icon_neutral.svg" height="35" width="35"/>
     </div>
     <div id="map">
-        <img src="../image/home_assets/icons/map_icon_neutral.svg" height="30"/>
+        <img src="../image/home_assets/icons/map_icon_neutral.svg" height="35" width="35"/>
     </div>
     <div class="active" id="order">
-        <img src="../image/home_assets/icons/order_icon_selected.svg" height="40"/>
+        <img src="../image/home_assets/icons/order_icon_selected.svg" height="35" width="35"/>
     </div>
     <div id="rewards">
-        <img src="../image/home_assets/icons/rewards_icon_neutral.svg" height="30"/>
+        <img src="../image/home_assets/icons/rewards_icon_neutral.svg" height="35" width="35"/>
     </div>
     <div id="account">
-        <img src="../image/home_assets/icons/account_icon_neutral.svg" height="25"/>
+        <img src="../image/home_assets/icons/account_icon_neutral.svg" height="35" width="35"/>
     </div>
 </menu>
 
 <script>
 
 document.getElementById('checkoutButton').addEventListener('click', function() {
-        window.location.href = '../controller/complete_order.php';
-    });
+    window.location.href = '../controller/complete_order.php';
+});
 
-    document.getElementById('backButton').addEventListener('click', function() {
-        window.location.href = 'order1.php';
-    });
+    // document.getElementById('backButton').addEventListener('click', function() {
+    //     window.location.href = 'order1.php';
+    // });
 
 
     function navigateToPage(page) {

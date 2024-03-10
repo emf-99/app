@@ -1,4 +1,14 @@
-<?php require '../dbconnect.php'; ?>
+<?php
+session_start();
+require '../dbconnect.php'; 
+
+if (basename($_SERVER['PHP_SELF']) !== 'register.php') {
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: register.php');
+        exit();
+    }
+}
+?>
 
 <!doctype html>
 <html lang="en">
@@ -10,6 +20,7 @@
     <title>Order</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/order/order1.css">
+    <script src="../js/script.js"></script>
 </head>
 <body>
 <header>
@@ -20,7 +31,7 @@
 
 <div class="content">
     <div class="xy_con">
-        <div class="title">Order</div>
+        <div class="order1_title">Order</div> <!-- Create new div for order1 title -->
         <div class="order_list">
             <a href="">Previous</a>
             <a href="">Featured</a>
@@ -31,26 +42,17 @@
     <div class="center_content">
     <div class="order_con"> 
 
-        <div class="order_con_title">Smoothie base</div>
+        <div class="order_con_title">Smoothie Base</div>
 
             <div class="order_add">
                 <div class="order_add_right">
-                    <div>
-                        <span class="add_icon">+</span>
-                        Water
-                    </div>
-                    <div>
-                        <span class="add_icon">+</span>
-                        Milk
-                    </div>
-                    <div>
-                        <span class="add_icon">+</span>
-                        Yogurt
-                    </div>
-                    <div>
-                        <span class="add_icon">+</span>
-                        Almond
-                    </div>
+                    <form id="baseSelection">
+                        <input type="radio" name="base" value="Water Base" id="water" class="custom_radio"> <label for="water">Water Base</label><br>
+                        <input type="radio" name="base" value="Milk Base" id="milk" class="custom_radio"> <label for="milk">Milk Base</label><br>
+                        <input type="radio" name="base" value="Yogurt Base" id="yogurt" class="custom_radio"> <label for="yogurt">Yogurt Base</label><br>
+                        <input type="radio" name="base" value="Almond Milk Base" id="almondMilk" class="custom_radio"> <label for="almondMilk">Almond Milk</label><br>
+                    </form>
+
                 </div>
 
 
@@ -63,7 +65,7 @@
             <div class="order_btn_line">
                 <div class="order_btn" id="backButton">< Back</div>
                 <div class="order_line"><img src="../image/order_assets/progress_bar_narrow.svg"/></div>
-                <div class="order_btn" id="continueButton">Continue ></div>
+                <div class="order_btn" id="continueButton" onclick="submitBaseSelection()">Continue ></div>
             </div>
 
         </div>
@@ -72,19 +74,19 @@
 
 <menu>
     <div id="home">
-        <img src="../image/home_assets/icons/home_icon_neutral.svg" height="25"/>
+        <img src="../image/home_assets/icons/home_icon_neutral.svg" height="35" width="35"/>
     </div>
     <div id="map">
-        <img src="../image/home_assets/icons/map_icon_neutral.svg" height="30"/>
+        <img src="../image/home_assets/icons/map_icon_neutral.svg" height="35" width="35"/>
     </div>
     <div class="active" id="order">
-        <img src="../image/home_assets/icons/order_icon_selected.svg" height="40"/>
+        <img src="../image/home_assets/icons/order_icon_selected.svg" height="35" width="35"/>
     </div>
     <div id="rewards">
-        <img src="../image/home_assets/icons/rewards_icon_neutral.svg" height="30"/>
+        <img src="../image/home_assets/icons/rewards_icon_neutral.svg" height="35" width="35"/>
     </div>
     <div id="account">
-        <img src="../image/home_assets/icons/account_icon_neutral.svg" height="25"/>
+        <img src="../image/home_assets/icons/account_icon_neutral.svg" height="35" width="35"/>
     </div>
 </menu>
 

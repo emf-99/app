@@ -12,6 +12,12 @@ title {
     font-size: 2rem;
 }
 
+.account_title{ /* Styles for account title */
+    font-size: 1.75rem;
+    font-weight: bold;
+    font-family: 'Fredoka';
+}
+
 .header_img {
     width: 80px;
     padding: 20px;
@@ -32,11 +38,19 @@ title {
     width: 100%;
     border: 2px solid black;
     text-align: center;
-    font-size: 18px;
+    font-size: 1rem;
     padding: 15px 0;
     margin-top: 20px;
     font-weight: bold;
     border-radius: 50px;
+    font-family: 'Button-Text';
+}
+
+.order_btn_list > div:hover {
+        color: #FFF3DB;
+    background-color: black;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
 div#logout>a {

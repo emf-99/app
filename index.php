@@ -1,4 +1,11 @@
-<?php require 'dbconnect.php'; ?>
+<?php 
+session_start();
+require 'dbconnect.php'; 
+
+$page_title = 'Index';
+include 'components/head.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

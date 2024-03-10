@@ -1,10 +1,17 @@
 <?php 
-
-session_start(); // Start the session at the beginning
+session_start(); 
 require 'dbconnect.php';
 
-?>
+if (basename($_SERVER['PHP_SELF']) !== 'register.php') {
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: register.php');
+        exit();
+    }
+}
+echo "User ID in session: " . $_SESSION['user_id'] . "<br>";
+echo "Order ID in session: " . $_SESSION['order_id'] . "<br>";
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,11 +30,11 @@ require 'dbconnect.php';
     <div><img id="cartBtn" src="image/home_assets/icons/cart_empty.svg" height="28" width="36"/></div>
 </header>
 <div class="content">
-    <div class="title">Order</div>
+    <div class="order_title">Order</div> <!-- Created new div for order title -->
     <div class="order_list">
-        <a>Previous</a>
-        <a>Featured</a>
-        <a href="order/order1.php">Custom</a>
+        <a></a>
+        <a>Menu</a>
+        <a></a>
     </div>
 
 <?php
@@ -75,7 +82,9 @@ echo "<div class='order_shop_list'>";
 foreach ($menuItems as $item) {
 
     $css_class = determineClassBasedOnTitle($item['title']);
-    echo "<form method='post' action='controller/add_to_cart.php' class='" . htmlspecialchars($css_class) . "'>";
+    $formAction = ($item['id'] == 6) ? 'order/order1.php' : 'controller/add_to_cart.php';
+
+    echo "<form method='post' action='" . htmlspecialchars($formAction) . "' class='" . htmlspecialchars($css_class) . "'>";
         echo "<button class='button'>"; 
             echo "<div class='button-content'>";
                 echo "<div class='button-text-smoothie'>";
@@ -87,7 +96,14 @@ foreach ($menuItems as $item) {
             echo "</div>";
             echo "<input type='hidden' name='order_id' value='" . htmlspecialchars($order['id']) . "'>";
             echo "<input type='hidden' name='menu_id' value='" . htmlspecialchars($item['id']) . "'>";
-        echo "</button>";
+
+    if ($item['id'] == 6) {
+        echo "<input type='hidden' name='is_custom_smoothie' value='1'>";
+    } else {
+        echo "<input type='hidden' name='is_custom_smoothie' value='0'>";
+    }
+
+    echo "</button>";
     echo "</form>";
 
 }
@@ -100,19 +116,19 @@ echo "</div>";
 
 <menu>
     <div id="home">
-        <img src="../image/home_assets/icons/home_icon_neutral.svg" height="25"/>
+        <img src="../image/home_assets/icons/home_icon_neutral.svg" height="35" width="35"/>
     </div>
     <div id="map">
-        <img src="../image/home_assets/icons/map_icon_neutral.svg" height="30"/>
+        <img src="../image/home_assets/icons/map_icon_neutral.svg" height="35" width="35"/>
     </div>
     <div class="active" id="order">
-        <img src="../image/home_assets/icons/order_icon_selected.svg" height="40"/>
+        <img src="../image/home_assets/icons/order_icon_selected.svg" height="35" width="35"/>
     </div>
     <div id="rewards">
-        <img src="../image/home_assets/icons/rewards_icon_neutral.svg" height="30"/>
+        <img src="../image/home_assets/icons/rewards_icon_neutral.svg" height="35" width="35"/>
     </div>
     <div id="account">
-        <img src="../image/home_assets/icons/account_icon_neutral.svg" height="25"/>
+        <img src="../image/home_assets/icons/account_icon_neutral.svg" height="35" width="35"/>
     </div>
 </menu>
 

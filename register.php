@@ -1,8 +1,9 @@
 <?php
 session_start();
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include 'dbconnect.php'; 
+    include 'dbconnect.php';
 
     $firstName = $_POST['first_name'];
     $lastName = $_POST['last_name'];
@@ -23,9 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($insertStmt->execute([$firstName, $lastName, $email, $hashedPassword])) {
 
                     $userId = $conn->lastInsertId();
-
-
                     $_SESSION['user_id'] = $userId;
+                    $_SESSION['email'] = $email;
+                    $_SESSION['first_name'] = $firstName;
 
 
                     header("Location: home.php");
@@ -41,8 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,30 +49,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="css/register.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("registerForm").addEventListener("submit", function(e) {
+                var password = document.getElementById("password").value;
+                var confirmPassword = document.getElementById("confirm_password").value;
+                
+                if (password !== confirmPassword) {
+                    e.preventDefault();
+                    alert("Passwords do not match.");
+                }
+            });
+        });
+    </script>
+
 </head>
 <body>
     <div class="content">
         <h2>Sign Up</h2>
-            <div class="register_content">
+        <div class="register_content">
             <?php if (!empty($errorMessage)) echo "<p style='color:red;'>$errorMessage</p>"; ?>
-                <form method="POST" action="register.php">
-                    <label for="first_name">First Name:</label><br>
-                    <input type="text" id="first_name" name="first_name" required><br>
+            <form method="POST" action="register.php" id="registerForm">
+                <label for="first_name">First Name:</label><br>
+                <input type="text" id="first_name" name="first_name" required><br>
 
-                    <label for="last_name">Last Name:</label><br>
-                    <input type="text" id="last_name" name="last_name" required><br>
+                <label for="last_name">Last Name:</label><br>
+                <input type="text" id="last_name" name="last_name" required><br>
 
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
 
-                    <label for="password">Password:</label><br>
-                    <input type="password" id="password" name="password" required><br><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required><br><br>
 
-                    <input type="submit" value="Register">
-                </form>
-                <button class="signin_btn"> already have an account? <a href="signin.php">Sign in</a></button>
+                <label for="confirm_password">Confirm Password:</label><br>
+                <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+
+                <input type="submit" value="Register" class="register_btn">
+            </form>
+            <button class="signin_btn"> already have an account? <br> <a href="signin.php">Sign in</a></button>
         </div>
     </div>
-
 </body>
 </html>
+
+<script>
+window.onpageshow = function(event) {
+    if (event.persisted) {
+        window.location.reload() 
+    }
+};
+</script>
+

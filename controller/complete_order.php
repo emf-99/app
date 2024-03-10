@@ -2,8 +2,12 @@
 session_start();
 require '../dbconnect.php';
 
-if (isset($_SESSION['user_id'], $_SESSION['order_id'])) {
-    $userId = $_SESSION['user_id'];
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+
+if (isset($_SESSION['order_id'])) {
+    // $userId = $_SESSION['user_id'];
     $orderId = $_SESSION['order_id']; 
     
 
@@ -11,18 +15,14 @@ if (isset($_SESSION['user_id'], $_SESSION['order_id'])) {
 
     try {
 
-        $updateOrderStmt = $conn->prepare("UPDATE orders SET status = 'complete' WHERE id = ? AND user_id = ?");
-        $updateOrderStmt->execute([$orderId, $userId]);
-
-
-        $clearCartStmt = $conn->prepare("DELETE FROM cart WHERE order_id = ?");
-        $clearCartStmt->execute([$orderId]);
+        $updateOrderStmt = $conn->prepare("UPDATE orders SET status = 'complete' WHERE id = ?");
+        $updateOrderStmt->execute([$orderId]);
 
         
         $conn->commit();
 
        
-        unset($_SESSION['order_id']);
+        // unset($_SESSION['order_id']);
 
 
         header("Location: ../order/completed_order.php"); 
@@ -34,8 +34,10 @@ if (isset($_SESSION['user_id'], $_SESSION['order_id'])) {
 
     }
 } else {
-    
-    header("Location: ../home.php");
+echo "Reached the point of redirection to home.php";
+var_dump($_SESSION['user_id'], $_SESSION['order_id']);
+exit;
+
 
     exit;
 }

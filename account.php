@@ -1,4 +1,14 @@
-<?php require 'dbconnect.php'; ?>
+<?php 
+session_start();
+require 'dbconnect.php'; 
+
+if (basename($_SERVER['PHP_SELF']) !== 'register.php') {
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: register.php');
+        exit();
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +30,7 @@
     <div><img src="image/home_assets/icons/cart_empty.svg" height="28" width="36"/></div>
 </header>
 <div class="content">
-    <div class="title">Account</div>
+    <div class="account_title">Account</div> <!-- Created new div for account title -->
     <div class="header_img">
         <img src="image/account_assets/account_icon_selected.svg"/>
     </div>
@@ -29,18 +39,18 @@
         <div id="settings" class="unclick">Settings</div>
         <div id="legal" class="unclick">Legal</div>
         <div id="more" class="unclick">More</div>
-        <div id="logout"> <a href="register.php">Log Out</a> </div>
+        <div id="logout"> <a href="controller/logout.php">Log Out</a> </div>
     </div>
 </div>
 <menu>
     <div id="home">
-        <img src="image/home_assets/icons/home_icon_neutral.svg" height="25"/>
+        <img src="image/home_assets/icons/home_icon_neutral.svg" height="35"/>
     </div>
     <div id="map">
         <img src="image/home_assets/icons/map_icon_neutral.svg" height="30"/>
     </div>
     <div id="order">
-        <img src="image/home_assets/icons/order_icon_neutral.svg" height="35"/>
+        <img src="image/home_assets/icons/order_icon_neutral.svg" height="40"/>
     </div>
     <div id="rewards">
         <img src="image/home_assets/icons/rewards_icon_neutral.svg" height="30"/>
@@ -73,7 +83,7 @@
     });
 
     document.getElementById('logout').addEventListener('click', function() {
-        navigateToPage('logout');
+        navigateToPage('register');
     });
 
     document.getElementById('home').addEventListener('click', function() {

@@ -2,6 +2,18 @@
 session_start();
 require 'dbconnect.php';
 
+
+if (basename($_SERVER['PHP_SELF']) !== 'signin.php') {
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: signin.php');
+        exit();
+    }
+}
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+
 if (isset($_POST['login'])) {
     $email = trim($_POST['email']);
     $password = $_POST['password'];

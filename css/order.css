@@ -25,6 +25,12 @@ title {
     font-size: 2rem;
 }
 
+.order_title{
+    font-size: 1.75rem;
+    font-weight: bold;
+    font-family: 'Fredoka';
+}
+
 .order_list{
     display: flex;
     justify-content: space-between;
@@ -32,7 +38,8 @@ title {
 }
 .order_list a{
     color: black;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    font-family: 'Mobile-Standard';
 }
 .order_shop_list{
     display: grid;
@@ -49,14 +56,14 @@ title {
 }
 
 h1 {
-    font-family: 'Fredoka';
-    font-size: 2rem;
+    font-family: 'Button-Text';
+    font-size: 1rem;
     color: white;
 }
 
 p {
-    font-family: "Poppins";
-    font-size: 1.5rem;
+    font-family: "Mobile-Standard";
+    font-size: 1rem;
     color: white;
     text-align: center;
 }

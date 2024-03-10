@@ -1,5 +1,5 @@
 .map_title{
-    font-size: 26px;
+    font-size: 1.75rem;
     font-weight: bold;
     font-family: 'Fredoka';
 }
@@ -14,23 +14,33 @@ title {
     font-size: 2rem;
 }
 
-.map_sm_title{
-    font-size: 20px;
+.map_sm_title{ /* Gave map_sm_title button-text font */
+    font-size: 1rem;
     font-weight: bold;
     margin-top: 20px;
+    font-family: 'Button-Text';
 }
 html{
     font-family: "Poppins";
 }
-.content>p{
+.content>p{ /* Gave p content mobile standard font */
     margin-top: 5px;
+    font-size: 1rem;
+    font-family: 'Mobile-Standard';
 }
 .map_contact{
     margin-top: 20px;
 }
-.map_contact>span{
-    font-size: 20px;
+
+.map_contact span {
+    font-size: 1rem;
     font-weight: bold;
+    font-family: "Button-Text";
+}
+
+.map_contact p{
+    font-family: 'Mobile-Standard';
+    font-size: 1rem;
 }
 .map{
     margin-top: 10px;
@@ -42,6 +52,7 @@ html{
     left: 50%;
     bottom: 0;
     transform: translate(-50%,50%);
+    cursor: pointer;
 }
 .xy_con{
     max-width: 960px;

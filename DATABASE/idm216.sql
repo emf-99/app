@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Feb 23, 2024 at 08:53 PM
+-- Generation Time: Feb 27, 2024 at 08:39 PM
 -- Server version: 5.7.39
 -- PHP Version: 7.4.33
 
@@ -31,16 +31,20 @@ CREATE TABLE `cart` (
   `id` int(11) NOT NULL,
   `order_id` int(11) DEFAULT NULL,
   `quantity` int(11) NOT NULL DEFAULT '1',
-  `menu_id` int(11) NOT NULL
+  `menu_id` int(11) NOT NULL,
+  `description` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`id`, `order_id`, `quantity`, `menu_id`) VALUES
-(1, 9, 1, 1),
-(2, 10, 1, 2);
+INSERT INTO `cart` (`id`, `order_id`, `quantity`, `menu_id`, `description`) VALUES
+(1, 9, 1, 1, NULL),
+(2, 10, 1, 2, NULL),
+(11, 14, 1, 2, NULL),
+(12, 14, 1, 3, NULL),
+(13, 14, 1, 6, NULL);
 
 -- --------------------------------------------------------
 
@@ -90,7 +94,8 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `cart_id`, `order_date`, `user_id`, `status`) VALUES
 (9, 1, '2024-02-18 12:30:00', 3, 'pending'),
-(10, 2, '2024-02-18 13:45:00', 4, 'pending');
+(10, 2, '2024-02-18 13:45:00', 4, 'pending'),
+(14, NULL, '2024-02-27 00:00:00', 5, 'complete');
 
 -- --------------------------------------------------------
 
@@ -153,7 +158,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -165,13 +170,13 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

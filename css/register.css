@@ -2,8 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background: #FFF3DB; */
-
 }
 
 @font-face {
@@ -17,6 +15,15 @@
 @font-face {
     src: url("../font/Fredoka-VariableFont_wdth,wght.ttf");
     font-family: 'Fredoka';
+}
+
+@font-face{ /* Add mobile standard font */
+    src: url("../font/Poppins-Regular.ttf");
+    font-family: 'Mobile-Standard';
+}
+@font-face{
+    src: url("../font/Poppins-SemiBold.ttf");
+    font-family: 'Button-Text';
 }
 
 .content {
@@ -35,20 +42,41 @@
     align-items: center;
     flex-direction: column;
     background: #E1D3B7;
-    padding: 2rem 8rem;
+    padding: 2rem 3rem;
     border-radius: 20px;
+    max-width: 100%;
+}
+
+
+div.register_content form{
+    width: 400px;
+}
+
+.register_content label{
+    font-family: 'Button-Text';
+    font-size: 1rem;
+}
+
+.register_content input{
+   font-family: 'Mobile-Standard';
+   font-size: 1rem;
+}
+
+.register_content input[type="submit"] {
+    font-family: 'Button-Text';
+    font-size: 1rem;
 }
 
 h2 {
     font-family: 'Fredoka';
-    font-size: 30px;
+    font-size: 1.75rem;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 form, p {
-    font-family: 'poppins';
-    font-size: 18px;
+    font-family: 'Mobile-Standard';
+    font-size: 1rem;
 }
 
 label {
@@ -60,21 +88,37 @@ label {
 }
 
 input, button {
-    font-family: 'poppins';
+    font-family: 'Mobile-Standard';
     font-size: 18px;
     margin-top: 10px;
     margin-bottom: 40px;
-    font-size: 16px; /* Font size */
-    padding: 5px 10px; /* Padding around the text inside the input */
-    border: 1px solid black; /* Border color and width */
-    border-radius: 30px; /* Border radius to round the corners */
+    font-size: 16px;
+    padding: 10px 115px 10px 30px; 
+    border: 1px solid black; 
+    border-radius: 30px; 
     background-color: #FFF3DB;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+input {
+    justify-content: center;
+    align-items: center;
+}
+
+input.register_btn {
+    background-color: #FFF3DB;
+    color: black;
+    padding: 10px 40px;
 }
 
 .signin_btn {
     background-color: #5B965E;
     color: white;
     padding: 10px 10px;
+    font-family: 'Button-Text';
+    font-size: 1rem;
+
 }
 
 .signin_btn a{
@@ -86,10 +130,11 @@ input#password {
 }
 
 input:focus {
-    outline: none; /* Remove the default focus outline */
-    border-color: #FF9999; /* Change the border color when focused */
-    box-shadow: 0 0 5px rgba(252, 179, 179, 0.5); /* Add a box shadow when focused */
+    outline: none;
+    border-color: #FF9999;
+    box-shadow: 0 0 5px rgba(252, 179, 179, 0.5);
 }
+
 
 .form-group {
     display: flex;
@@ -98,8 +143,74 @@ input:focus {
 }
 
 
-@media screen and (max-width: 550px){
+
+
+/* @media screen and (max-width: 550px){
     .register_content {
-        padding: 1rem 3rem;
+        padding: 1rem 12rem;
+    }
+} */
+
+@media screen and (max-width: 659px){
+    input, button {
+        padding: 10px 40px;
+        
+    }
+}
+
+@media screen and (max-width: 659px){
+    div.register_content form {
+        width: fit-content;
+        
+    }
+}
+
+@media screen and (max-width: 659px){
+    .signin_btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input.register_btn {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    div.register_content form {
+        width: 200px;
+        
+    }
+}
+
+@media screen and (max-width: 425px){
+    input, button {
+        padding: 10px 10px;
+        
+    }
+}
+
+/* @media screen and (max-width: 425px){
+    .register_content {
+        padding: 1rem 10rem;
+    }
+} */
+
+@media screen and (max-width: 425px){
+    .signin_btn {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input.register_btn {
+        font-size: 12px;
     }
 }

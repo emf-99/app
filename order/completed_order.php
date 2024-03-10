@@ -1,4 +1,14 @@
-<?php require '../dbconnect.php'; ?>
+<?php 
+session_start();
+require '../dbconnect.php'; 
+
+if (basename($_SERVER['PHP_SELF']) !== 'register.php') {
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: register.php');
+        exit();
+    }
+}
+?>
 
 <!doctype html>
 <html lang="en">
@@ -49,19 +59,19 @@
 
 <menu>
     <div id="home">
-        <img src="../image/home_assets/icons/home_icon_neutral.svg" height="25"/>
+        <img src="../image/home_assets/icons/home_icon_neutral.svg" height="35" width="35"/>
     </div>
     <div id="map">
-        <img src="../image/home_assets/icons/map_icon_neutral.svg" height="30"/>
+        <img src="../image/home_assets/icons/map_icon_neutral.svg" height="35" width="35"/>
     </div>
     <div class="active" id="order">
-        <img src="../image/home_assets/icons/order_icon_selected.svg" height="40"/>
+        <img src="../image/home_assets/icons/order_icon_selected.svg" height="35" width="35"/>
     </div>
     <div id="rewards">
-        <img src="../image/home_assets/icons/rewards_icon_neutral.svg" height="30"/>
+        <img src="../image/home_assets/icons/rewards_icon_neutral.svg" height="35" width="35"/>
     </div>
     <div id="account">
-        <img src="../image/home_assets/icons/account_icon_neutral.svg" height="25"/>
+        <img src="../image/home_assets/icons/account_icon_neutral.svg" height="35" width="35"/>
     </div>
 </menu>
 
